@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+    <div th:replace="fragments :: page-header"></div>
+
+    <div class="container body-content">
+        <h1>T and T Seafood Restaurant</h1>
+
+        <p>View menus by:</p>
+        <ul>
+            <li><a th:href="@{/search}">Search</a></li>
+            <li><a th:href="@{/list}">List</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

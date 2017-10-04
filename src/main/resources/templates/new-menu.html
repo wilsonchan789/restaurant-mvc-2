@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+
+    <form th:object="${menuForm}" method="post">
+
+        <div class="form-group">
+            <label th:for="name">Name</label>
+            <input th:field="*{name}" />
+            <div th:errors="*{name}"></div>
+        </div>
+
+        <div class="form-group">
+            <label th:for="categoryId">Category</label>
+            <select th:field="*{categoryId}">
+                <option th:each="category : *{categories}"
+                        th:value="${category.id}"
+                        th:text="${category.value}"></option>
+            </select>
+        </div>
+
+        <!-- TODO #5 - Create <select> dropdowns for other recipe fields -->
+
+        <div class="form-group">
+            <label th:for="priceId">Price</label>
+            <select th:field="*{priceId}">
+                <option th:each="price : *{prices}"
+                        th:value="${price.id}"
+                        th:text="${price.value}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label th:for="spicyId">Spicy</label>
+            <select th:field="*{spicyId}">
+                <option th:each="spicy : *{spicys}"
+                        th:value="${spicy.id}"
+                        th:text="${spicy.value}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label th:for="poundId">Pound</label>
+            <select th:field="*{poundId}">
+                <option th:each="pound : *{pounds}"
+                        th:value="${pound.id}"
+                        th:text="${pound.value}"></option>
+            </select>
+        </div>
+
+        <input type="submit" value="Add Menu" />
+    </form>
+
+</div>
+
+</body>
+</html>
