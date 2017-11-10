@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @Controller
 @RequestMapping(value = "list")
-public class ListController {
+public class ListController extends AbstractController {
 
     private MenuItemData menuItemData = MenuItemData.getInstance();
 
@@ -67,6 +68,7 @@ public class ListController {
 
         return "list-menus";
     }
+
 
     @RequestMapping(value = "all")
     public String listAllJobs(Model model) {

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="jumbotron bg-image">
+
+
+
+    <div class="container">
+
+
+        <h1>T and T Seafood Restaurant</h1>
+        <p>Come visit our restaurant and enjoy the Chinese food.</p>
+        <p th:if="${sessionOn == false}"><a class="btn btn-primary btn-lg" th:href="@{/register}">Sign up to order!</a></p>
+
+    </div>
+    <!--   /container  -->
+</div>
+
+
+<div class="container">
+    <div class="container body-content">
+        <h1>
+            <span th:text="${#strings.capitalizeWords(title)}"></span>
+            <span class="glyphicon glyphicon-cutlery"></span>
+        </h1>
+        <span></span>
+        <div class="page-header">
+            <h1>Created by:</h1>
+        </div>
+        <section class="team">
+            <div class="team-flex-container" id="team">
+                <article class="team-flex-item">
+                    <figure>
+                        <img class="portrait" src="https://scontent-sea1-1.cdninstagram.com/t51.2885-15/s480x480/e15/10954220_549759201827962_1462388012_n.jpg?ig_cache_key=OTA2NTk1NjQyMzc1NDUxMTE2.2"></img>
+                    </figure>
+                    <div class="team-bio-copy">
+                        <h3>@wilsonchan789</h3>
+                        <p>Full-stack Developer</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </div>
+
+
+
+</body>
+</html>

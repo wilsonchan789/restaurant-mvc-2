@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 @Controller
 @RequestMapping("search")
-public class SearchController {
+public class SearchController extends AbstractController {
 
     private MenuItemData menuItemData = MenuItemData.getInstance();
 
@@ -36,7 +36,6 @@ public class SearchController {
         }
 
         model.addAttribute("menus", menus);
-
         return "search";
     }
 
